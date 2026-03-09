@@ -247,6 +247,17 @@ body {
     background-color: #0056b3;
 }
 
+/* Неактивная кнопка оформления заказа */
+.checkout-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.checkout-btn:disabled:hover {
+    background-color: #6c757d; /* без изменения при наведении */
+}
+
 /* Футер */
 .footer {
     text-align: center;

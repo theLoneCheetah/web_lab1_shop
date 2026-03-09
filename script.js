@@ -119,6 +119,13 @@ function calculateTotal() {
     return cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 }
 
+// Обновление состояния кнопки "Оформить заказ"
+function updateCheckoutButtonState() {
+    if (checkoutBtn) {
+        checkoutBtn.disabled = cartItems.length === 0;
+    }
+}
+
 /**
  * Отрисовка корзины на основе массива cartItems
  */
@@ -134,6 +141,7 @@ function renderCart() {
         emptyMessage.textContent = 'Корзина пуста';
         cartContainer.appendChild(emptyMessage);
         totalPriceSpan.textContent = '0 ₽';
+        updateCheckoutButtonState(); // обновление состояния кнопки оформления заказа
         return;
     }
 
@@ -181,6 +189,7 @@ function renderCart() {
 
     // Обновляем итоговую сумму
     totalPriceSpan.textContent = `${calculateTotal()} ₽`;
+    updateCheckoutButtonState(); // обновление состояния кнопки оформления заказа
 }
 
 // Обработчики событий
@@ -229,7 +238,7 @@ function closeModal() {
     orderForm.reset();
 }
 
-// Обработчик клика на кнопку "Оформить заказ"
+// Обработчик клика на кнопку "Оформить заказ", не сработает, если кнопка disabled
 checkoutBtn.addEventListener('click', openModal);
 
 // Обработчик клика на кнопку закрытия
