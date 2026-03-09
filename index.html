@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Имя страницы в браузере -->
+    <title>Мой магазин</title>
+    <!-- Подключение CSS  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <h1>Мой магазин</h1>
+    </header>
+
+    <main class="main">
+        <!-- Секция товаров -->
+        <section class="products">
+            <h2>Товары</h2>
+            <div class="products-grid">
+                <!-- Карточка товара 1 -->
+                <article class="product-card">
+                    <img src="https://via.placeholder.com/200x150" alt="Товар 1" class="product-image">
+                    <h3 class="product-title">Товар 1</h3>
+                    <p class="product-price">1000 ₽</p>
+                    <!-- Кнопка с индексацией соответственно товару -->
+                    <button class="add-to-cart-btn" data-product-id="1">Добавить в корзину</button>
+                </article>
+
+                <!-- Карточка товара 2 -->
+                <article class="product-card">
+                    <img src="https://via.placeholder.com/200x150" alt="Товар 2" class="product-image">
+                    <h3 class="product-title">Товар 2</h3>
+                    <p class="product-price">1500 ₽</p>
+                    <button class="add-to-cart-btn" data-product-id="2">Добавить в корзину</button>
+                </article>
+
+                <!-- Карточка товара 3 -->
+                <article class="product-card">
+                    <img src="https://via.placeholder.com/200x150" alt="Товар 3" class="product-image">
+                    <h3 class="product-title">Товар 3</h3>
+                    <p class="product-price">2000 ₽</p>
+                    <button class="add-to-cart-btn" data-product-id="3">Добавить в корзину</button>
+                </article>
+
+                <!-- Карточка товара 4 -->
+                <article class="product-card">
+                    <img src="https://via.placeholder.com/200x150" alt="Товар 4" class="product-image">
+                    <h3 class="product-title">Товар 4</h3>
+                    <p class="product-price">1200 ₽</p>
+                    <button class="add-to-cart-btn" data-product-id="4">Добавить в корзину</button>
+                </article>
+
+                <!-- Карточка товара 5 -->
+                <article class="product-card">
+                    <img src="https://via.placeholder.com/200x150" alt="Товар 5" class="product-image">
+                    <h3 class="product-title">Товар 5</h3>
+                    <p class="product-price">1800 ₽</p>
+                    <button class="add-to-cart-btn" data-product-id="5">Добавить в корзину</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Блок корзины -->
+        <aside class="cart">
+            <h2>Корзина</h2>
+            <div class="cart-items">
+                <!-- Добавленные товары -->
+            </div>
+            <div class="cart-total">
+                <strong>Итого: </strong><span class="total-price">0 ₽</span>
+            </div>
+            <button class="checkout-btn">Оформить заказ</button>
+        </aside>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <p>&copy; 2026 Мой магазин</p>
+    </footer>
+
+    <!-- Модальное окно для оформления заказа -->
+    <div class="modal-overlay" id="orderModalOverlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Оформление заказа</h2>
+                <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+            </div>
+            <!-- Текстовые поля для заполнения формы заказа -->
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="firstName">Имя:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Фамилия:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Адрес доставки:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Контактный номер телефона:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <!-- Кнопка отправки формы -->
+                <button type="submit" class="submit-order-btn">Создать заказ</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Подключение JS -->
+    <script src="script.js"></script>
+</body>
+</html>
